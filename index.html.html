@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hazelnut Confectionery🌰</title>
+    <style>
+      body {
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(215, 223, 252) 0%,
+          rgb(255, 255, 255) 0%,
+          rgb(215, 223, 252) 84%
+        );
+      }
+
+      h1 {
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/016/923/original/Vinatge-Luxury-Golden-Frame-PNG-HD.png?1631270820");
+        background-size: 450px 200px;
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        padding: 90px;
+        margin-bottom: 0;
+        color: #a38932;
+      }
+
+      h2 {
+        margin-top: 0;
+        font-size: 25px;
+        margin-bottom: 18px;
+      }
+
+      img {
+        border-radius: 10px;
+        margin-bottom: 16px;
+        width: 350px;
+      }
+
+      button {
+        margin: 0 10px;
+        line-height: 35px;
+        padding: 5px 15px;
+        border: 1px solid #885df1;
+        border-radius: 40px;
+        background-color: #885df1;
+        color: #f6f2fe;
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background-color: transparent;
+        color: #885df1;
+        cursor: pointer;
+      }
+
+      .container {
+        max-width: 550px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        background-color: #f6f2fe;
+        border-radius: 20px;
+        box-shadow: 0 10px 15px 0 #b8b8be;
+      }
+
+      .paragraph {
+        margin-bottom: 20px;
+      }
+
+      .footer {
+        line-height: 50px;
+        font-size: 14px;
+        font-family: monospace;
+        opacity: 0.7;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hazelnut Confectionery</h1>
+
+      <h2>
+        <em>Pastry Chef Needed!</em>
+      </h2>
+
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/016/925/original/peanut-butter-oatmeal-sandwich-cookies.jpg?1631271443"
+        id="image"
+        alt="peanut butter cookies"
+      />
+
+      <div class="paragraph">
+        We are looking for a pastry chef with special skills in
+        <strong>Peanut Butter Cookies</strong>!
+        <div>Please take our cookies quiz if you are a cookies specialist!</div>
+      </div>
+
+      <button class="quiz">Take The Quiz!</button>
+
+      <button class="recipe">Recieve Recipe</button>
+
+      <p class="footer">
+        <a href="https://github.com/Mahsa-Goudarzi/cookies-landing-page"
+          >Open-source coded</a
+        >
+        by
+        <a class="coder" href="https://www.linkedin.com/in/mahsagoudarzi">
+          Mahsa Goudarzi
+        </a>
+      </p>
+    </div>
+
+    <script>
+      function quiz() {
+        alert(
+          "Please tell me how much ingredients you need to bake peanut butter cookies 🍪🍪"
+        );
+        let peanutButter = prompt(
+          "🥜How many cups of peanut butter do you need?"
+        );
+        let sugar = prompt("🍬How many cups of sugar do you need?");
+        let egg = prompt("🥚How many eggs do you need?");
+
+        let paragraph = document.querySelector(".paragraph");
+
+        if (
+          sugar / peanutButter <= 1 &&
+          sugar / peanutButter >= 0.5 &&
+          egg / peanutButter === 1
+        ) {
+          document.getElementById("image").src =
+            "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/016/935/original/happy.jpg?1631290010";
+          paragraph.innerHTML = `🥜You added ${peanutButter} cup(s) of peanut butter. <br /> 
+                🍬You added ${sugar} cup(s) of sugar. <br />
+                🥚You added ${egg} egg(s). <br />
+                <strong>You are such a good chef!</strong>`;
+        } else {
+          document.getElementById("image").src =
+            "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/016/934/original/unhappy.jpg?1631289994";
+          paragraph.innerHTML = `🥜You added ${peanutButter} cup(s) of peanut butter. <br /> 
+                🍬You added ${sugar} cup(s) of sugar. <br />
+                🥚You added ${egg} egg(s). <br />
+                <strong>Oops! It seems that you need more practice. You can use our recipe!</strong>`;
+        }
+      }
+
+      function recipe() {
+        let paragraph = document.querySelector(".paragraph");
+        document.getElementById("image").src =
+          "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/016/924/original/Easy-Peanut-Butter-Cookies-Homemade.jpg?1631271431";
+        paragraph.innerHTML = `<strong>Ingredinets</strong> <br />
+            🥜1 cup of peanut butter<br /> 🍬0.5 to 1 cup of white sugar<br /> 🥚1 egg<hr />
+            <strong>Step 1</strong> <br />
+            Preheat oven to 350°F (175°C).<hr />
+            <strong>Step 2</strong> <br />
+            In a large bowl, mix together the peanut butter, sugar, and egg.<hr />
+            <strong>Step 3</strong> <br />
+            Scoop out a spoonful of dough and roll it into a ball. Place the cookie balls onto a nonstick baking sheet.<hr />
+            <strong>Step 4</strong> <br />
+            For extra decoration and to make them cook more evenly, flatten the cookie balls by pressing a fork down on top of them, then press it down again at a 90º angle to make a criss-cross pattern.<hr />
+            <strong>Step 5</strong> <br />
+            Bake for 8-10 minutes or until the bottom of the cookies are golden brown.<hr />
+            <strong>Step 6</strong> <br />
+            Remove from baking sheet and cool.<hr />
+            <strong>Step 7</strong> <br />
+            Enjoy!`;
+      }
+
+      let quizButton = document.querySelector(".quiz");
+      quizButton.addEventListener("click", quiz);
+
+      let recipeButton = document.querySelector(".recipe");
+      recipeButton.addEventListener("click", recipe);
+    </script>
+  </body>
+</html>
